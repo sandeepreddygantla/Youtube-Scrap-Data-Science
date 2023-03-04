@@ -53,7 +53,7 @@ def index():
             ]
             
             # Iterate through the video data and append it to the report list
-            for i in range(30):
+            for i in range(5):
                 video_url = 'https://www.youtube.com/watch?v=' + video_ids[i].split('"')[-2]
                 thumbnail_url = thumbnails[i].split('"')[-2]
                 title = titles[i].split('"')[-2]
@@ -69,6 +69,8 @@ def index():
                 csvwriter = csv.writer(csvfile)
                 for row in report_list:
                     csvwriter.writerow(row)
+
+
             
             # Render the result template with the report list and search query
             return render_template('result.html', report_list=report_list, channel=search_query)
