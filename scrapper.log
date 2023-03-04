@@ -193,3 +193,7 @@ INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:05] "[36mGET /static/css/main.c
 INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:09] "POST /review HTTP/1.1" 200 -
 INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:23:48] "GET /review HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 16:07:42] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 16:07:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 16:32:50] "GET /review HTTP/1.1" 200 -
