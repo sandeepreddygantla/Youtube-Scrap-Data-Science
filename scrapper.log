@@ -178,3 +178,18 @@ INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:root:document must be an instance of dict, bson.son.SON, bson.raw_bson.RawBSONDocument, or a type that inherits from collections.MutableMapping
 INFO:werkzeug:172.18.0.2 - - [03/Mar/2023 20:30:20] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.9:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:04:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:04:51] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:04:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:04:55] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:04:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:05] "GET /review HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:05] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:09] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [04/Mar/2023 15:05:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
