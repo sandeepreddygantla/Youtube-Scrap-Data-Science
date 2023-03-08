@@ -48,9 +48,7 @@ def index():
             published_times = re.findall('"publishedTimeText":{"simpleText":".*?"', response_text)
             
             # Create a report list to hold all of the relevant video data
-            report_list = [
-                ['S No', 'Video url', 'Thumbnail', 'Title', 'Views', 'Published Time']
-            ]
+            report_list = []
             
             # Iterate through the video data and append it to the report list
             for i in range(5):
@@ -60,17 +58,27 @@ def index():
                 view_count = views[i].split('"')[-2]
                 published_time = published_times[i].split('"')[-2]
                 
-                temp = [i+1, video_url, thumbnail_url, title, view_count, published_time]
+                temp = {
+                    'S No': i+1,
+                    'Video url': video_url,
+                    'Thumbnail': thumbnail_url,
+                    'Title': title,
+                    'Views': view_count,
+                    'Published Time': published_time
+                }
                 report_list.append(temp)
                 
             # Write the report list to a CSV file
             csv_file_name = os.path.join(BASE_DIR, search_query+'.csv')
             with open(csv_file_name, 'w') as csvfile:
-                csvwriter = csv.writer(csvfile)
+                fieldnames = ['S No', 'Video url', 'Thumbnail', 'Title', 'Views', 'Published Time']
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                writer.writeheader()
                 for row in report_list:
-                    csvwriter.writerow(row)
+                    writer.writerow(row)
 
-            client = pymongo.MongoClient("mongodb+srv://reddysandeep0904:Sandeep@0588@cluster0.x3niyyi.mongodb.net/?retryWrites=true&w=majority")
+            # Insert the report data into the MongoDB collection
+            client = pymongo.MongoClient("mongodb+srv://reddysandeep0904:Sandeep0588@cluster0.x3niyyi.mongodb.net/?retryWrites=true&w=majority")
             db = client['youtube_scrap']
             review_col = db['youtube_data']
             review_col.insert_many(report_list)
