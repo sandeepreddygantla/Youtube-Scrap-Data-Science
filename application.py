@@ -70,7 +70,10 @@ def index():
                 for row in report_list:
                     csvwriter.writerow(row)
 
-
+            client = pymongo.MongoClient("mongodb+srv://reddysandeep0904:Sandeep@0588@cluster0.x3niyyi.mongodb.net/?retryWrites=true&w=majority")
+            db = client['youtube_scrap']
+            review_col = db['youtube_data']
+            review_col.insert_many(report_list)
             
             # Render the result template with the report list and search query
             return render_template('result.html', report_list=report_list, channel=search_query)
